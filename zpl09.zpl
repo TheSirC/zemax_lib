@@ -1,0 +1,2 @@
+x=6
+OPTRETURN 5, x

@@ -1,0 +1,23 @@
+!
+! FINDFILE demo by Kenneth Moore 10-12-95
+!
+
+DATA$ = $DATAPATH()
+FILTER$ = DATA$ + "\SAMPLES\*.ZMX"
+
+!
+PRINT "Listing of all ZEMAX files in ", FILTER$
+!
+FINDFILE TEMPFILE$, FILTER$
+LABEL 1
+IF (SLEN(TEMPFILE$))
+	PRINT TEMPFILE$
+	FINDFILE TEMPFILE$, FILTER$
+	GOTO 1
+ENDIF
+PRINT "No more files."
+
+
+
+
+
